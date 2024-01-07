@@ -1,4 +1,5 @@
 // src/App.tsx
+
 import React, { Suspense, ReactElement } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Components/HomePage";
@@ -13,8 +14,8 @@ function App(): ReactElement {
   return (
     <>
       <div className="min-h-screen">
-        <Header />
         <BrowserRouter>
+          <Header />
           <Routes>
             <Route path="/" element={<HomePage />}>
               <Route
@@ -34,10 +35,7 @@ function App(): ReactElement {
 
             <Route path="/movie-detail" element={<DetailsPage />} />
             <Route path="/create-movie" element={<CreateMoviePage />} />
-            <Route
-              path="/:movie/create-review"
-              element={<CreateReviewPage />}
-            />
+            <Route path="/create-review" element={<CreateReviewPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
